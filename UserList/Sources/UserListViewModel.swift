@@ -8,6 +8,10 @@
 import Foundation
 
 class UserListViewModel: ObservableObject {
+    
+    // TODO: - The property should be declared in the viewModel
+    let repository = UserListRepository()
+    
     // OutPut :
     // TODO: - Those properties should be viewModel's OutPuts
     @Published private(set) var users: [User] = []
@@ -41,8 +45,6 @@ class UserListViewModel: ObservableObject {
         }
     }
     
-    // TODO: - The property should be declared in the viewModel
-     let repository = UserListRepository()
 }
 
 
