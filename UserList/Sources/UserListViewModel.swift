@@ -37,8 +37,10 @@ class UserListViewModel: ObservableObject {
         Task {
             do {
                 let users = try await repository.fetchUsers(quantity: 20)
-                self.users.append(contentsOf: users)
-                isLoading = false
+                await MainActor.run{
+                    self.users.append(contentsOf: users)
+                    isLoading = false
+                }
             } catch {
                 print("Error fetching users: \(error.localizedDescription)")
             }
