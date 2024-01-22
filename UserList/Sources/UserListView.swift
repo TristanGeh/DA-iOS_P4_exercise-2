@@ -8,26 +8,7 @@ struct UserListView: View {
             if !viewModel.isGridView {
                 List(viewModel.users) { user in
                     NavigationLink(destination: UserDetailView(user: user)) {
-                        HStack {
-                            AsyncImage(url: URL(string: user.picture.thumbnail)) { image in
-                                image
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                            } placeholder: {
-                                ProgressView()
-                                    .frame(width: 50, height: 50)
-                                    .clipShape(Circle())
-                            }
-                            
-                            VStack(alignment: .leading) {
-                                Text("\(user.name.first) \(user.name.last)")
-                                    .font(.headline)
-                                Text("\(user.dob.date)")
-                                    .font(.subheadline)
-                            }
-                        }
+                        UserListGridView(user: user)
                     }
                     .onAppear {
                         if viewModel.shouldLoadMoreData(currentItem: user) {
@@ -38,7 +19,7 @@ struct UserListView: View {
                 .navigationTitle("Users")
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        UserListToolBarView()
+                        UserListToolBarView(isGridView: $viewModel.isGridView, reloadButton: viewModel.reloadUsers)
                     }
                     
                 }
@@ -47,23 +28,7 @@ struct UserListView: View {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]) {
                         ForEach(viewModel.users) { user in
                             NavigationLink(destination: UserDetailView(user: user)) {
-                                VStack {
-                                    AsyncImage(url: URL(string: user.picture.medium)) { image in
-                                        image
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            .frame(width: 150, height: 150)
-                                            .clipShape(Circle())
-                                    } placeholder: {
-                                        ProgressView()
-                                            .frame(width: 150, height: 150)
-                                            .clipShape(Circle())
-                                    }
-                                    
-                                    Text("\(user.name.first) \(user.name.last)")
-                                        .font(.headline)
-                                        .multilineTextAlignment(.center)
-                                }
+                                UserListRowView(user: user)
                             }
                             .onAppear {
                                 if viewModel.shouldLoadMoreData(currentItem: user) {
@@ -76,7 +41,7 @@ struct UserListView: View {
                 .navigationTitle("Users")
                 .toolbar {
                     ToolbarItemGroup(placement: .navigationBarTrailing) {
-                        UserListToolBarView()
+                        UserListToolBarView(isGridView: $viewModel.isGridView, reloadButton: viewModel.reloadUsers)
                     }
                 }
             }

@@ -20,7 +20,9 @@
 		2FFB642C2AC6D256007F2F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFB642B2AC6D256007F2F80 /* Assets.xcassets */; };
 		E04315292B54D929007ECFAD /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04315282B54D929007ECFAD /* UserListViewModel.swift */; };
 		E043152B2B5DC952007ECFAD /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E043152A2B5DC952007ECFAD /* UserListViewModelTests.swift */; };
-		E043152D2B5E037B007ECFAD /* UserListToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E043152C2B5E037B007ECFAD /* UserListToolBarView.swift */; };
+		E043152F2B5E0A6B007ECFAD /* UserListGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E043152E2B5E0A6B007ECFAD /* UserListGridView.swift */; };
+		E04315322B5E0BAA007ECFAD /* UserListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04315312B5E0BAA007ECFAD /* UserListRowView.swift */; };
+		E04315342B5E0CA4007ECFAD /* UserListToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04315332B5E0CA4007ECFAD /* UserListToolBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,9 @@
 		2FFB64342AC6D256007F2F80 /* UserListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E04315282B54D929007ECFAD /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		E043152A2B5DC952007ECFAD /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
-		E043152C2B5E037B007ECFAD /* UserListToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListToolBarView.swift; sourceTree = "<group>"; };
+		E043152E2B5E0A6B007ECFAD /* UserListGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListGridView.swift; sourceTree = "<group>"; };
+		E04315312B5E0BAA007ECFAD /* UserListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListRowView.swift; sourceTree = "<group>"; };
+		E04315332B5E0CA4007ECFAD /* UserListToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListToolBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +80,8 @@
 			children = (
 				2FFB64272AC6D255007F2F80 /* UserListApp.swift */,
 				2FFB64292AC6D255007F2F80 /* UserListView.swift */,
-				E043152C2B5E037B007ECFAD /* UserListToolBarView.swift */,
+				E04315302B5E0B15007ECFAD /* UserListViews */,
 				E04315282B54D929007ECFAD /* UserListViewModel.swift */,
-				2F804AE12ACC976300A46A03 /* UserDetailView.swift */,
 				2FEF0C702ACB45E3004DB87C /* User.swift */,
 				2FEF0C6E2ACB416C004DB87C /* UserListResponse.swift */,
 				2FF9D91E2ACB3DD400F3A6C5 /* UserListRepository.swift */,
@@ -140,6 +143,17 @@
 				2FB4823B2ACC98DD0016CBA7 /* UserList.xctestplan */,
 			);
 			path = UserListTests;
+			sourceTree = "<group>";
+		};
+		E04315302B5E0B15007ECFAD /* UserListViews */ = {
+			isa = PBXGroup;
+			children = (
+				E04315312B5E0BAA007ECFAD /* UserListRowView.swift */,
+				E043152E2B5E0A6B007ECFAD /* UserListGridView.swift */,
+				2F804AE12ACC976300A46A03 /* UserDetailView.swift */,
+				E04315332B5E0CA4007ECFAD /* UserListToolBarView.swift */,
+			);
+			path = UserListViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,12 +256,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04315322B5E0BAA007ECFAD /* UserListRowView.swift in Sources */,
+				E04315342B5E0CA4007ECFAD /* UserListToolBarView.swift in Sources */,
 				2FF9D91D2ACB3D8800F3A6C5 /* HTTPMethod.swift in Sources */,
-				E043152D2B5E037B007ECFAD /* UserListToolBarView.swift in Sources */,
 				2FF9D91B2ACB3CE600F3A6C5 /* URLRequest.swift in Sources */,
 				2FFB642A2AC6D255007F2F80 /* UserListView.swift in Sources */,
 				2FEF0C6F2ACB416C004DB87C /* UserListResponse.swift in Sources */,
 				E04315292B54D929007ECFAD /* UserListViewModel.swift in Sources */,
+				E043152F2B5E0A6B007ECFAD /* UserListGridView.swift in Sources */,
 				2F804AE22ACC976300A46A03 /* UserDetailView.swift in Sources */,
 				2FF9D91F2ACB3DD400F3A6C5 /* UserListRepository.swift in Sources */,
 				2FFB64282AC6D255007F2F80 /* UserListApp.swift in Sources */,
