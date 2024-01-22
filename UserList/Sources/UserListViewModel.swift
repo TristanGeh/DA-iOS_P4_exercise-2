@@ -14,8 +14,8 @@ class UserListViewModel: ObservableObject {
     
     // OutPut :
     // TODO: - Those properties should be viewModel's OutPuts
-    @Published private(set) var users: [User] = []
-    @Published private(set) var isLoading = false
+    @Published  var users: [User] = []
+    @Published  var isLoading = false
     @Published  var isGridView = false
     
     // TODO: - Should be an OutPut
