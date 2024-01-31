@@ -8,12 +8,9 @@
 import Foundation
 
 class UserListViewModel: ObservableObject {
-    
-    // TODO: - The property should be declared in the viewModel
     let repository = UserListRepository()
     
     // OutPut :
-    // TODO: - Those properties should be viewModel's OutPuts
     @Published  var users: [User] = []
     @Published  var isLoading = false
     @Published  var isGridView = false
@@ -26,12 +23,10 @@ class UserListViewModel: ObservableObject {
     
     //Input :
     
-    // TODO: - Should be a viewModel's input
      func reloadUsers() {
         users.removeAll()
         fetchUsers()
     }
-    // TODO: - Should be a viewModel's input
      func fetchUsers() {
         isLoading = true
         Task {
